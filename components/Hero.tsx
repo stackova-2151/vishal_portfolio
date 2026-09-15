@@ -1,30 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowRight, Download, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, Download, ChevronDown, Phone } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] },
 });
-
-const codeLines = [
-  { key: "name", value: '"Vishal More"', color: "text-amber-300" },
-  { key: "mobile", value: '"Flutter"', color: "text-green-400" },
-  { key: "web", value: '"Next.js"', color: "text-blue-400" },
-  { key: "backend", value: '"Spring Boot"', color: "text-orange-400" },
-  { key: "database", value: '"Firebase / MySQL"', color: "text-cyan-400" },
-  { key: "location", value: '"Pune, India"', color: "text-purple-400" },
-];
-
-const techBadges = [
-  { label: "Flutter", color: "text-blue-400" },
-  { label: "Next.js", color: "text-text-secondary" },
-  { label: "React", color: "text-cyan-400" },
-  { label: "Spring Boot", color: "text-green-400" },
-  { label: "Firebase", color: "text-amber-400" },
-  { label: "Tailwind", color: "text-text-secondary" },
-];
 
 export default function Hero() {
   const scrollTo = (id: string) =>
@@ -33,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-16 overflow-hidden"
+      className="relative min-h-screen flex items-start pt-16 overflow-hidden"
     >
       {/* Subtle background glows */}
       <div
@@ -46,7 +28,7 @@ export default function Hero() {
       />
       <div aria-hidden="true" className="absolute inset-0 bg-grid opacity-[0.18] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-2 lg:py-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ── Left: Content ── */}
@@ -115,101 +97,119 @@ export default function Hero() {
               </button>
             </motion.div>
 
-            {/* Social links */}
-            <motion.div {...fadeUp(0.38)} className="flex items-center gap-3">
+          </div>
+
+          {/* ── Right: Profile Image with Neural Network BG ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="order-2 relative flex flex-col justify-center items-center gap-6"
+          >
+            {/* Neon glow backdrop */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 rounded-3xl pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(ellipse 70% 60% at 50% 55%, rgba(6,182,212,0.22) 0%, rgba(59,130,246,0.14) 40%, transparent 75%)",
+                filter: "blur(18px)",
+              }}
+            />
+
+            {/* Neural network SVG canvas */}
+            <svg
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 420 480"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Grid lines */}
+              {[60,120,180,240,300,360].map((x) => (
+                <line key={`vl-${x}`} x1={x} y1="0" x2={x} y2="480" stroke="rgba(6,182,212,0.10)" strokeWidth="1" />
+              ))}
+              {[60,120,180,240,300,360,420].map((y) => (
+                <line key={`hl-${y}`} x1="0" y1={y} x2="420" y2={y} stroke="rgba(6,182,212,0.10)" strokeWidth="1" />
+              ))}
+              {/* Neural connections */}
+              {[
+                [60,60,180,120],[60,60,120,180],[180,120,300,60],[180,120,360,180],
+                [120,180,240,240],[240,240,360,180],[240,240,180,360],[360,180,300,300],
+                [300,300,180,360],[300,300,420,360],[60,300,180,360],[60,300,120,420],
+                [300,60,420,120],[420,120,360,180],[180,360,300,420],[60,420,180,360],
+              ].map(([x1,y1,x2,y2], i) => (
+                <line key={`conn-${i}`} x1={x1} y1={y1} x2={x2} y2={y2}
+                  stroke="rgba(6,182,212,0.18)" strokeWidth="1" />
+              ))}
+              {/* Nodes */}
+              {[
+                [60,60],[180,120],[300,60],[420,120],
+                [120,180],[360,180],[60,300],[240,240],
+                [420,360],[300,300],[180,360],[60,420],
+                [300,420],[420,240],[120,420],
+              ].map(([cx,cy], i) => (
+                <g key={`node-${i}`}>
+                  <circle cx={cx} cy={cy} r="5" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.55)" strokeWidth="1" />
+                  <circle cx={cx} cy={cy} r="2" fill="rgba(6,182,212,0.9)" />
+                </g>
+              ))}
+              {/* Accent bright nodes */}
+              {[[180,120],[240,240],[300,300]].map(([cx,cy], i) => (
+                <g key={`bright-${i}`}>
+                  <circle cx={cx} cy={cy} r="8" fill="rgba(6,182,212,0.08)" stroke="rgba(6,182,212,0.8)" strokeWidth="1.5" />
+                  <circle cx={cx} cy={cy} r="3" fill="#06B6D4" />
+                </g>
+              ))}
+            </svg>
+
+            {/* Image with circular fade mask */}
+            <div
+              className="relative z-10 w-80 sm:w-96 lg:w-[28rem]"
+              style={{
+                maskImage: "radial-gradient(ellipse 75% 80% at 50% 45%, black 40%, transparent 75%)",
+                WebkitMaskImage: "radial-gradient(ellipse 75% 80% at 50% 45%, black 40%, transparent 75%)",
+                filter: "drop-shadow(0 0 40px rgba(6,182,212,0.45))",
+              }}
+            >
+              <img
+                src="/assets/png/portfolio.png"
+                alt="Vishal More"
+                className="w-full object-contain"
+              />
+            </div>
+
+            {/* Social links below image */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="relative z-10 flex flex-col items-center gap-2"
+            >
               <span className="text-text-muted text-xs font-medium uppercase tracking-wider">
                 Find me on
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 {[
-                  { href: "https://github.com/Saurabh-2151", label: "GitHub", icon: Github },
-                  { href: "https://www.linkedin.com/in/saurabh-ganjale-5b5b76257/", label: "LinkedIn", icon: Linkedin },
-                  { href: "mailto:saurabhganjaleflutter@gmail.com", label: "Email", icon: Mail },
-                ].map(({ href, label, icon: Icon }) => (
+                  { href: "https://github.com/VishalMore77", label: "GitHub", icon: Github, color: "#06B6D4", shadow: "0 0 12px rgba(6,182,212,0.8), 0 0 24px rgba(6,182,212,0.4)" },
+                  { href: "https://www.linkedin.com/in/vishal-more-57200b244/", label: "LinkedIn", icon: Linkedin, color: "#3B82F6", shadow: "0 0 12px rgba(59,130,246,0.8), 0 0 24px rgba(59,130,246,0.4)" },
+                  { href: "mailto:vishalmore7760@gmail.com", label: "Email", icon: Mail, color: "#3B82F6", shadow: "0 0 12px rgba(59,130,246,0.8), 0 0 24px rgba(59,130,246,0.4)" },
+                  { href: "tel:+919767847605", label: "Call", icon: Phone, color: "#22C55E", shadow: "0 0 12px rgba(34,197,94,0.8), 0 0 24px rgba(34,197,94,0.4)" },
+                ].map(({ href, label, icon: Icon, color, shadow }) => (
                   <a
                     key={label}
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                     aria-label={label}
-                    className="p-2 rounded-lg border border-border-color hover:border-accent/40 hover:bg-card text-text-secondary hover:text-text-primary transition-all duration-200"
+                    className="p-2.5 rounded-xl transition-all duration-300"
+                    style={{ color, border: `1px solid ${color}`, boxShadow: shadow, background: `${color}15` }}
                   >
-                    <Icon size={16} />
+                    <Icon size={18} />
                   </a>
                 ))}
               </div>
             </motion.div>
-          </div>
-
-          {/* ── Right: Code Panel ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="order-2 relative"
-          >
-            {/* Editor window */}
-            <div className="rounded-xl border border-border-color bg-card shadow-2xl overflow-hidden">
-              {/* Title bar */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border-color bg-card-elevated">
-                <div className="flex gap-1.5" aria-hidden="true">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
-                </div>
-                <span className="text-text-muted text-xs font-mono ml-2 select-none">
-                  developer.ts
-                </span>
-              </div>
-
-              {/* Code body */}
-              <div className="p-5 font-mono text-sm leading-7 overflow-x-auto">
-                <div className="text-text-muted text-xs">{"// About the developer"}</div>
-                <div className="mt-1">
-                  <span className="text-blue-400">const </span>
-                  <span className="text-text-primary">developer </span>
-                  <span className="text-text-secondary">= {"{"}</span>
-                </div>
-                {codeLines.map((line, i) => (
-                  <motion.div
-                    key={line.key}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.45 + i * 0.09, duration: 0.35 }}
-                    className="ml-5"
-                  >
-                    <span className="text-text-secondary">{line.key}</span>
-                    <span className="text-text-muted">: </span>
-                    <span className={line.color}>{line.value}</span>
-                    <span className="text-text-muted">,</span>
-                  </motion.div>
-                ))}
-                <div className="text-text-secondary">{"}"}</div>
-                <div className="mt-2 text-text-muted text-xs">{"// Status"}</div>
-                <div>
-                  <span className="text-blue-400">const </span>
-                  <span className="text-text-primary">status </span>
-                  <span className="text-text-secondary">= </span>
-                  <span className="text-green-400">&quot;open_to_work&quot;</span>
-                  <span className="text-text-muted">;</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Tech badges — positioned safely inside the column */}
-            <div className="mt-4 flex flex-wrap gap-2 justify-center lg:justify-start">
-              {techBadges.map((badge, i) => (
-                <motion.span
-                  key={badge.label}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 + i * 0.07 }}
-                  className={`px-3 py-1 text-xs font-medium bg-card-elevated border border-border-color rounded-md ${badge.color}`}
-                >
-                  {badge.label}
-                </motion.span>
-              ))}
-            </div>
           </motion.div>
         </div>
 

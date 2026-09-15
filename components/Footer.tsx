@@ -10,9 +10,9 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "https://github.com/Saurabh-2151" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/saurabh-ganjale-5b5b76257/" },
-  { icon: Mail, label: "Email", href: "mailto:saurabhganjaleflutter@gmail.com" },
+  { icon: Github, label: "GitHub", href: "https://github.com/VishalMore77" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/vishal-more-57200b244/-5b5b76257/" },
+  { icon: Mail, label: "Email", href: "mailto:vishalmore7760@gmail.com" },
 ];
 
 export default function Footer() {
@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-cyan flex items-center justify-center text-white font-bold text-sm shrink-0">
-                SG
+                VM
               </div>
               <span className="font-semibold text-text-primary text-sm">Vishal More</span>
             </div>
@@ -71,7 +71,7 @@ export default function Footer() {
               ))}
             </div>
             <p className="text-text-muted text-xs mt-4 leading-relaxed">
-              saurabhganjaleflutter@gmail.com
+              vishalmore7760@gmail.com
             </p>
           </div>
         </div>

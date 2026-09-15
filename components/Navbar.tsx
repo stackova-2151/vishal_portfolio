@@ -67,7 +67,7 @@ export default function Navbar() {
           aria-label="Vishal More — Home"
         >
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-cyan flex items-center justify-center text-white font-bold text-sm shrink-0">
-            SG
+            VM
           </div>
           <span className="font-semibold text-text-primary text-sm hidden sm:block">
             Vishal More

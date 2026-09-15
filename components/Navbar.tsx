@@ -41,7 +41,9 @@ export default function Navbar() {
 
   const handleNav = (href: string) => {
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
   };
 
   return (
@@ -50,8 +52,8 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-bg/92 backdrop-blur-md border-b border-border-color shadow-sm"
+        scrolled || mobileOpen
+          ? "bg-[#0a0a1a]/95 backdrop-blur-md border-b border-border-color shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -132,7 +134,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="md:hidden bg-bg-secondary border-b border-border-color overflow-hidden"
+            className="md:hidden bg-[#0a0a1a] border-b border-border-color overflow-hidden"
           >
             <div className="px-5 py-3 flex flex-col gap-0.5">
               {navLinks.map(({ label, href }) => {

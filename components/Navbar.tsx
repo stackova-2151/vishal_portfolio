@@ -103,7 +103,7 @@ export default function Navbar() {
         {/* Resume CTA */}
         <div className="hidden md:flex">
           <a
-            href="https://drive.google.com/file/d/15t7kU0yGAm9coBJa46BUsBwJLycejckZ/view?usp=sharing"
+            href="https://drive.google.com/file/d/124Q4cPHh9El3ZL_gDNMoxNmIigX22LR7/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-accent hover:bg-blue-500 text-white rounded-lg transition-colors duration-200"
@@ -152,7 +152,7 @@ export default function Navbar() {
                 );
               })}
               <a
-                href="https://drive.google.com/file/d/15t7kU0yGAm9coBJa46BUsBwJLycejckZ/view?usp=sharing"
+                href="https://drive.google.com/file/d/124Q4cPHh9El3ZL_gDNMoxNmIigX22LR7/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold bg-accent text-white rounded-lg"

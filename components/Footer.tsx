@@ -76,15 +76,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-6 border-t border-border-color flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-text-muted text-xs">
-            © 2026 Vishal More. All rights reserved.
-          </p>
-          <p className="text-text-muted text-xs">
-            Built with Next.js &amp; Tailwind CSS
-          </p>
-        </div>
+       
       </div>
     </footer>
   );

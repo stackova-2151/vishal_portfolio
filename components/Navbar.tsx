@@ -53,8 +53,8 @@ export default function Navbar() {
       transition={{ duration: 0.45, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || mobileOpen
-          ? "bg-[#0a0a1a]/95 backdrop-blur-md border-b border-border-color shadow-sm"
-          : "bg-transparent"
+          ? "bg-[#0a0a1a]/60 backdrop-blur-xl shadow-lg"
+          : "bg-[#0a0a1a]/30 backdrop-blur-md"
       }`}
     >
       <nav
@@ -68,10 +68,7 @@ export default function Navbar() {
           className="flex items-center gap-2.5"
           aria-label="Vishal More — Home"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-cyan flex items-center justify-center text-white font-bold text-sm shrink-0">
-            VM
-          </div>
-          <span className="font-semibold text-text-primary text-sm hidden sm:block">
+          <span className="font-semibold text-text-primary text-sm">
             Vishal More
           </span>
         </a>
@@ -134,7 +131,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="md:hidden bg-[#0a0a1a] border-b border-border-color overflow-hidden"
+            className="md:hidden bg-[#0a0a1a]/60 backdrop-blur-xl overflow-hidden"
           >
             <div className="px-5 py-3 flex flex-col gap-0.5">
               {navLinks.map(({ label, href }) => {

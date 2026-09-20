@@ -51,10 +51,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-3 gap-10 lg:gap-14 mb-10">
 
           <motion.div variants={fadeFrom(-20, 0)} initial="hidden" animate={inView ? "show" : "hidden"}>
-            <motion.div className="flex items-center gap-2.5 mb-4 w-fit" whileHover={{ scale: 1.04 }} transition={{ duration: 0.22, ease: "easeOut" }} style={{ cursor: "default" }}>
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0" style={{ background: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)", boxShadow: "0 0 14px rgba(59,130,246,0.30)" }}>
-                VM
-              </div>
+            <motion.div className="mb-4 w-fit" whileHover={{ scale: 1.04 }} transition={{ duration: 0.22, ease: "easeOut" }} style={{ cursor: "default" }}>
               <span className="font-semibold text-text-primary text-sm tracking-tight">Vishal More</span>
             </motion.div>
             <p className="text-text-muted text-sm leading-relaxed max-w-[210px]">Full-Stack &amp; Flutter Developer building modern digital solutions.</p>
@@ -82,11 +79,6 @@ export default function Footer() {
             </div>
             <p className="text-text-muted text-xs mt-4 leading-relaxed break-all">vishalmore7760@gmail.com</p>
           </motion.div>
-        </div>
-
-        <div className="pt-6 border-t border-border-color flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-text-muted text-xs">© 2025 Vishal More. All rights reserved.</p>
-          <p className="text-text-muted text-xs">Built with Next.js &amp; Tailwind CSS</p>
         </div>
       </div>
     </footer>

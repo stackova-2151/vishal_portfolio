@@ -38,10 +38,10 @@ export const processSteps = [
 ];
 
 export const whyWorkWithMe = [
-  { icon: "Layers", title: "End-to-End Development", description: "From UI design to backend APIs and deployment — I handle the full stack." },
-  { icon: "Rocket", title: "Production-Focused", description: "Code built for real-world use: scalable, maintainable and reliable." },
-  { icon: "Code2", title: "Modern Technology", description: "Using current, industry-standard tools and frameworks." },
+  { icon: "Layers", title: "End to End Development", description: "From UI design to backend APIs and deployment I handle the full stack." },
+  { icon: "Rocket", title: "Production Focused", description: "Code built for real world use: scalable, maintainable and reliable." },
+  { icon: "Code2", title: "Modern Technology", description: "Using current, industry standard tools and frameworks." },
   { icon: "Monitor", title: "Responsive UI", description: "Interfaces that work flawlessly across mobile, tablet and desktop." },
   { icon: "Plug", title: "API & Integrations", description: "Experienced with payments, maps, notifications, real-time systems and more." },
-  { icon: "Users", title: "Client-Focused", description: "Clear communication, regular updates and solutions aligned to your goals." },
+  { icon: "Users", title: "Client Focused", description: "Clear communication, regular updates and solutions aligned to your goals." },
 ];

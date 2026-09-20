@@ -165,7 +165,7 @@ export default function Hero() {
 
             {/* Image with circular fade mask */}
             <div
-              className="relative z-10 w-80 sm:w-96 lg:w-[28rem]"
+              className="relative z-10 w-80 sm:w-96 lg:w-[28rem] group"
               style={{
                 maskImage: "radial-gradient(ellipse 75% 80% at 50% 45%, black 40%, transparent 75%)",
                 WebkitMaskImage: "radial-gradient(ellipse 75% 80% at 50% 45%, black 40%, transparent 75%)",
@@ -175,7 +175,12 @@ export default function Hero() {
               <img
                 src="/assets/png/portfolio.png"
                 alt="Vishal More"
-                className="w-full object-contain"
+                className="w-full object-contain transition-all duration-500 group-hover:scale-105 group-hover:opacity-0 absolute inset-0"
+              />
+              <img
+                src="/assets/png/portfolio_coloured.png"
+                alt="Vishal More"
+                className="w-full object-contain transition-all duration-500 scale-95 opacity-0 group-hover:scale-105 group-hover:opacity-100"
               />
             </div>
 

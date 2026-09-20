@@ -36,9 +36,9 @@ export default function Projects() {
             Portfolio
           </p>
           <h2 className="text-3xl sm:text-[2.5rem] font-extrabold text-text-primary mb-3">
-            Featured Projects
+            Projects
           </h2>
-          <p className="text-text-secondary text-[15px] max-w-lg mx-auto">
+          <p className="text-text-secondary text-[14px] max-w-lg mx-auto">
             Selected applications and business solutions I&apos;ve designed and developed.
           </p>
         </motion.div>

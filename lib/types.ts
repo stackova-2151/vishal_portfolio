@@ -1,3 +1,10 @@
+export interface ProjectImages {
+  mobile: string[];
+  admin?: string | string[];
+}
+
+export type GalleryImageType = "mobile" | "web" | "admin";
+
 export interface Project {
   id: number;
   name: string;
@@ -10,7 +17,7 @@ export interface Project {
   clientProject: boolean;
   technologies: string[];
   features: string[];
-  images: string[];
+  images: ProjectImages;
   liveUrl: string | null;
   playStoreUrl: string | null;
   githubUrl: string | null;
